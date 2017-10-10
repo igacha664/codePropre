@@ -10,19 +10,23 @@ public class Zoo {
 	
 	public Zoo(String nom){
 		this.nom = nom;
+		 savaneAfricaine = new SavaneAfricaine();
+		 zoneCarnivore  = new ZoneCarnivore();
+		 fermeReptile = new FermeReptile();
+		 aquarium = new Aquarium();
 	}
 	
-	public void addAnimal(String nomAnimal, String typeAnimal, String comportement){
-		if (typeAnimal.equals("MAMMIFERE") && comportement.equals("CARNIVORE")){
+	public void addAnimal(String nomAnimal, TypeAnimal typeAnimal, String comportement){
+		if (typeAnimal.equals(TypeAnimal.MAMMIFERE) && comportement.equals("CARNIVORE")){
 			zoneCarnivore.addAnimal(typeAnimal, nomAnimal, comportement);
 		}
-		else if (typeAnimal.equals("MAMMIFERE") && comportement.equals("HERBIVORE")){
+		else if (typeAnimal.equals(TypeAnimal.MAMMIFERE) && comportement.equals("HERBIVORE")){
 			savaneAfricaine.addAnimal(typeAnimal, nomAnimal, comportement);
 		}
-		else if (typeAnimal.equals("REPTILE")){
+		else if (typeAnimal.equals(TypeAnimal.REPTILE)){
 			fermeReptile.addAnimal(typeAnimal, nomAnimal, comportement);
 		}
-		else if (typeAnimal.equals("POISSON")){
+		else if (typeAnimal.equals(TypeAnimal.POISSON)){
 			aquarium.addAnimal(typeAnimal, nomAnimal, comportement);
 		}
 	}
